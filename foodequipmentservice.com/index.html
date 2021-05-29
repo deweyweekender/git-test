@@ -7,13 +7,13 @@
     <!-- Required meta tags always come first -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <!-- Additional CSS must be placed after Bootstrap CSS -->
-    <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css" />
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
-    <link rel="stylesheet" href="../css/styles.css" />
 
     <title>Food Equipment Service</title>
 </head>
@@ -23,34 +23,38 @@
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-4 col-sm-3 col-md-2 align-self-center">
-                    <img src="../img/truck-solid.svg" class="img-fluid" />
+              <!--  <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                    <img src="img/fesTruck.JPG" class="img-fluid" />
                 </div>
-                <div class="col bg-light text-danger">
+            -->
+                <div class="col bg text-danger align-items-center">
                     <h1>Food Equipment Service</h1>
-                    <h2 class="text-danger">Your commercial equipment specialists</h2>
+                    <h3 class="text-danger">Your Commercial Food Equipment Specialists</h3>
+                    <h5>Since 1992</h5>
                 </div>
-                <div class="col col-md-4 col-xl-2 mt-4 ">
-                    <a role="button" data-toggle="modal"  data-target="#reserveModal"><i class="fa fa-sign-in"></i>Reserve Campsite</a>
+                <div class="col-sm col-md-4 col-xl-2 mt-4 ">
+                    <button type="button" id="loginButton" class="btn btn-info mx-5 text-nowrap">Login or Register</button>
+                <p></p>
+                    <button type="button" id="serviceButton" class="btn btn-danger mx-5 text-nowrap">Request Service</button>
                 </div>
             </div>
         </div>
     </header>
 
-    <div id="reserveModal" class="modal fade" role="dialog">
+    <div id="serviceModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-info text-white">
-                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <h3 class="modal-title">Request Service</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form id="reserveForm">
+                        <form id="serviceForm">
                             <div class="row form-group">
-                                <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers</label>
+                                <label for="numEquip" class="col-sm-6 col-form-label">Number of Equipment</label>
                                 <div class="col-sm-6">
-                                    <select name="numCampers" class="form-control" id="numCampers" name="numCampers">
+                                    <select name="numEquip" class="form-control" id="numEquip" name="numEquip">
                                         <option value="">Select...</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -62,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label for="date" class="col-sm-6 col-form-label">Date</label>
+                                <label for="date" class="col-sm-6 col-form-label">Requested Date</label>
                                 <div class="col">
                                     <input type="date" class="form-control" name="date" id="date" placeholder="mm/dd/yy" />
                                 </div>
@@ -95,22 +99,19 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="../img/logo.png" height="30" width="30" /></a>
+            <a class="navbar-brand" href="#"><i class="fa fa-home fa-lg"></i><img src="img/FesLogo1.png" height="60" width="60" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="nucampNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
-                <span class="navbar-text ml-auto">
-                    <a role="button" data-toggle="modal" data-target="#loginModal">
-                        <i class="fa fa-sign-in"></i> Login
-                    </a>
-                </span>
+            </div>
+            <div class="d-none d-sm-block col-sm-3">
+                <img src="img/fesTruck.JPG" class="img-fluid rounded-lg align-right" max-height="10%" width="auto" />
             </div>
         </div>
     </nav>
@@ -153,7 +154,9 @@
     </div>
     
     <div class="container">
-
+        <div class="col-sm-4 order-sm-last col-md-3">
+            <h2 class="text-sm-right">We Repair Your...</h2>
+        </div>
         <div class="row row-content">
             <div class="col-md-8 mx-auto">
                 <div id="homeCarousel" class="carousel slide" data-ride="carousel">
@@ -161,27 +164,35 @@
                         <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#homeCarousel" data-slide-to="1"></li>
                         <li data-target="#homeCarousel" data-slide-to="2"></li>
+                        <li data-target="#homeCarousel" data-slide-to="3"></li>
                     </ul>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="../img/breadcrumb-trail.jpg" alt="Breadcrump Trail Campground" />
+                            <img class="d-block w-100" src="img/cooking-equip.png" alt="Cooking Equipment" />
                             <div class="carousel-caption" >
-                                <h3>Breadcrumb Trail Campground</h3>
-                                <p class="d-none d-sm-block">Let Nucamp be your guide to this off-the-beaten-path, hike-in-only campground</p>
+                                <h3>Cooking Equipment</h3>
+                                <p class="d-none d-sm-block">Factory trained <span style="color:aqua;"><b>CFESA</b> Certified</span> technicians that are friendly, knowledgeable, and professional</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="../img/react-lake.jpg" alt="React Lake Campground" />
+                            <img class="d-block w-100" src="img/refrigeration.jpg" alt="Refrigeration Equipment" />
                             <div class="carousel-caption" >
-                                <h3>React Lake Capground</h3>
-                                <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                                <h3>Refrigeration Equipment</h3>
+                                <p class="d-none d-sm-block">Well stocked <b>"Mobile Warehoses"</b> so we can fix most issues during our initial visit</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="../img/chrome-river.jpg" alt="Chrome River Campground" />
+                            <img class="d-block w-100" src="img/hvac-equipment.jpg" alt="Hvac Equipment" />
                             <div class="carousel-caption" >
-                                <h3>Chrome River Campground</h3>
-                                <p class="d-none d-sm-block">Spend a few sunny days and starry nights beneath a canopy of old growth firs at this enchanting spot by the Chrome River.</p>
+                                <h3>HVAC Equipment</h3>
+                                <p class="d-none d-sm-block">For your conveience, we maintain a repair history of your equipment so you know the maintenence costs and when and if you should replace your equipment </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img/exhaust.jpg" alt="Exhaust Equipment" />
+                            <div class="carousel-caption" >
+                                <h3>Exhaust Equipment</h3>
+                                <p class="d-none d-sm-block">Emergency service available 7 days a week 365 days a year. Even when our office is closed you can still count on our emergency service to handle your most important repairs and service</p>
                             </div>
                         </div>
                     </div>
@@ -198,42 +209,42 @@
         </div>
         <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
-                <h2 class="text-sm-right">Discover & Review</h2>
+                <h2 class="text-sm-right">Our Technicians</h2>
             </div>
             <div class="col">
                 <div class="media">
-                    <img class="d-flex mr-3 img.thumbnail" src="../img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb-Trail-Thumbnail" />
+                    <img class="d-flex mr-3 img.thumbnail" src="img/cfesa-certified.jpg" alt="Cfesa Certified" />
                     <div class="media-body align-self-center">
-                        <h3>Our Campsites</h3>
-                        <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
+                        <h3>CFESA Certified</h3>
+                        <p class="d-none d-sm-block">We send our technicians to factory training programs as well as have them CFESA certified so that you can be guaranteed that your repairs are handled by qualified professionals. We back this up with our 30 day in house parts and labor guarantee to assure you that your satisfaction is our #1 goal</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row row-content align-column-center">
             <div class="col-sm-4 col-md-3 my-auto">
-                <h2>Featured Campsites</h2>
+                <h2>George Report</h2>
             </div>
             <div class="col">
                 <div class="media">
-                    <img class="d-flex ml-3 img-thumbnail order-last" src="../img/react-lake-thumb.jpg" alt="React-Lake-Thumbnail" />
+                    <img class="d-flex ml-3 img-thumbnail order-last" src="img/geo-number.jpg" alt="Repair Sticker" />
                     <div class="media-body align-self-center">
-                        <h3>React Lake Campground</h3>
-                        <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                        <h3>Repair History</h3>
+                        <p class="d-none d-sm-block">One of the first in the industry to help customers track reapirs of their equipment with our <b>GEO Number</b> named for its inventor George Fox, who started the company after many years in the equipment sales side of the industry. George understands the importance of knowing when it is time to replace equipment and felt the customer needed a better way to track the cost of maintaining their equipment. So ask for your <b>George Report</b> today!</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
-                <h2 class="text-sm-right">Our Community Partners</h2>
+                <h2 class="text-sm-right">Your Community Partner</h2>
             </div>
             <div class="col">
                 <div class="media">
-                    <img class="d-flex mr-3 img.thumbnail" src="../img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
+                    <img class="d-flex mr-3 img.thumbnail" src="img/Parts-and-Service.png" alt="Parts and Service" />
                     <div class="media-body align-self-center">
-                        <h3>Bootstrap Outfitters</h3>
-                        <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+                        <h3>Over 100 Manufacturers</h3>
+                        <p class="d-none d-sm-block">We can work on any commercial cooking appliance, bain maries - water filters.  We have repaired equipment from over 100 different manufacturers. If your equipment isn't is working properly, call us! We can also service many units under their warranty. So if you need service or just parts, we are here for you  </p>
                     </div>
                 </div>
             </div>
@@ -248,7 +259,7 @@
                 <ul class="list-unstyled">
                     <li><a href="#">Home</a></li>
                     <li><a href="aboutus.html">About</a></li>
-                    <li><a href="#">Sites</a></li>
+                    <li><a href="#">We Fix it</a></li>
                     <li><a href="contactus.html">Contact</a></li>
                 </ul>
             </div>
@@ -260,8 +271,8 @@
                 <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
             </div>
             <div class="col-sm-4 text-center">
-                <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone fa-lg text-primary"></i> 1-206-555-1234</a><br />
-                <a role="button" class="btn btn-link" href="mailto:campsite@nucamp.co"><i class="fa fa-envelope-o text-primary"></i> campsites@nucamp.co</a>
+                <a role="button" class="btn btn-link" href="tel:+3029969363"><i class="fa fa-phone fa-lg text-primary"></i> 1-302-996-9363</a><br />
+                <a role="button" class="btn btn-link" href="mailto:service@foodequipmentservice.com"><i class="fa fa-envelope-o text-primary"></i> service@foodequipmentservice.com</a>
             </div>
         </div>
     </div>
@@ -271,6 +282,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 
 <!-- <script>
         $(function () {

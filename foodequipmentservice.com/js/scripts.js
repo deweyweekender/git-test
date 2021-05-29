@@ -1,6 +1,6 @@
 $(function() {
     $(".carousel").carousel( { interval: 2000, pause: "false" } );
-    $("#carouselButton").on("click", function(){
+        $("#carouselButton").on(click, function(){
         if ($("#carouselButton").children("i").hasClass("fa-pause")) {
             $(".carousel").carousel("pause");
             $("#carouselButton").children("i").removeClass("fa-pause");
@@ -11,8 +11,8 @@ $(function() {
             $("#carouselButton").children("i").addClass("fa-pause");
         }
     });
-    $("#reserveButton").on("click", function(){
-        $("#reserveModal").modal('show');
+    $("#serviceButton").on("click", function(){
+        $("#serviceModal").modal('show');
     });
     $("#loginButton").on("click", function(){
         $("#loginModal").modal('show');

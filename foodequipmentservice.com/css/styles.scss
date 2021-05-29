@@ -1,0 +1,92 @@
+$color-primary:#d7f0d3;
+$color-secondary: #abd3ab;
+$color-pale: #f02020;
+$color-mid: #a81010;
+$color-dark: #e7f8b7;
+$color-black-transparent: rgba(0,0,0,0.5);
+$color-teal: #92240988;
+$color-body-background: lightgoldenrodyellow;
+$color-carousel-text: khaki;
+$body-font: "Open Sans", sans-serif;
+$header-font: "Lobster", cursive; 
+
+body {
+    font-family: $body-font;
+    background-color: $color-body-background;
+    
+}
+
+h1, h2, h3 {
+    font-family: $header-font;
+}
+
+h2 {
+    color: $color-pale;
+}
+
+header {
+    h2 {
+    color: $color-pale;
+    }
+}
+
+.site-footer {
+    background-image: linear-gradient($color-pale, white);
+    padding: 20px 0;
+}
+
+.jumbotron {
+    margin: 0;
+    padding: 1px;
+    background-image: linear-gradient(to right, $color-secondary, $color-primary, $color-dark);
+    color: white;
+}
+
+.row-content {
+    padding: 50px 0;
+    border-bottom: 1px ridge;
+    min-height: 200px;
+}
+
+.navbar-dark {
+    background-color: $color-mid;
+}
+
+a, a:hover {
+    color: inherit;
+}
+
+.carousel-item{
+    width: 100%;
+    max-height: 350px;
+}
+
+.carousel-caption {
+    background-color: $color-black-transparent;
+    color: $color-carousel-text;
+}
+
+.carousel {
+    border: solid $color-secondary;
+}
+
+#carouselButton{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+#reserveModal{
+    .modal-header{
+        background-color: $color-teal;
+        color: white;
+ }   
+}
+
+#loginModal{
+    .modal-header{
+        background-color: $color-mid;
+        color: white;
+    }
+}
